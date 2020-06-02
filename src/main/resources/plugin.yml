@@ -1,0 +1,6 @@
+name: CryptoPrices
+main: me.trackrunny.cryptoprices.Main
+version: '1.0.0'
+api: ["2.0.0"]
+description: Get current prices of crypto currency
+author: TrackRunny#0001 - Discord

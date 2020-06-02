@@ -1,0 +1,33 @@
+plugins {
+    id'java'
+    id'application'
+    id "com.github.johnrengelman.shadow" version "5.2.0"
+}
+
+mainClassName = 'me.trackrunny.cryptoprices.Main'
+
+version '1.0.0'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+
+repositories {
+    jcenter()
+
+    maven {
+        url "https://repo.nukkitx.com/maven-snapshots/"
+    }
+}
+
+dependencies {
+    implementation group: 'cn.nukkit', name: 'nukkit', version: '2.0.0-SNAPSHOT'
+    implementation group: 'me.duncte123', name: 'botCommons', version: '1.0.88'
+}
+
+shadowJar {
+    dependencies {
+        exclude(dependency("cn.nukkit:nukkit:2.0.0-SNAPSHOT"))
+    }
+    mergeServiceFiles()
+}
+
+compileJava.options.encoding = 'UTF-8'
